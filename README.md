@@ -42,6 +42,12 @@ The backend streams Groq response chunks as SSE events, and the React `useStream
 
 Tools that need structured results, such as SEO analysis, keyword research, content ideas, calendars, brand voice, and metadata, return JSON instead of streaming text.
 
+## Why Groq API?
+
+ContentForge uses the Groq API because it provides fast LLM inference, which is especially useful for an interactive content generation app. Long-form tools like blog writing and rewriting benefit from low-latency token streaming, so users can see content appear in real time instead of waiting for a full response to finish.
+
+Groq also supports modern open chat models, making it a good fit for experimenting with generative AI workflows such as content drafting, SEO analysis, keyword research, brand voice analysis, and marketing copy generation.
+
 ## Setup
 
 1. Create a Groq API key at [console.groq.com](https://console.groq.com).
