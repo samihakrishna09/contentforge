@@ -1,0 +1,39 @@
+{
+  "name": "contentforge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered content generation platform built with React, Node.js, and Groq.",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --watchAll=false",
+    "server": "node server/index.js",
+    "dev": "concurrently \"npm start\" \"npm run server\""
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
+    "concurrently": "^8.2.2",
+    "framer-motion": "^11.3.30",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.26.2",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {},
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
