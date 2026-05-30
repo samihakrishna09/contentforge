@@ -1,6 +1,8 @@
 # ContentForge
 
-AI-powered content generation platform built with React, Node.js, and the Groq API.
+ContentForge is a generative AI content creation platform built with React, Node.js, and the Groq API. It helps writers, marketers, SEO teams, and founders generate, analyze, rewrite, and plan content from one workspace.
+
+The app uses large language models through Groq chat completions to produce long-form drafts, marketing copy, SEO analysis, keyword ideas, content calendars, brand voice profiles, metadata, and rewritten content.
 
 ## Features
 
@@ -15,6 +17,30 @@ AI-powered content generation platform built with React, Node.js, and the Groq A
 | Brand Voice | Analyze content to define brand personality and tone |
 | Content Rewriter | Improve, simplify, expand, or rewrite content |
 | Meta Generator | SEO titles, descriptions, OG tags, JSON-LD schema |
+
+## Workflow
+
+1. Choose a content tool from the sidebar.
+2. Enter the required inputs, such as topic, audience, keywords, brand, platform, or pasted content.
+3. The React frontend sends the request to the Express API server.
+4. The backend builds a focused prompt for the selected workflow and calls the Groq chat completions API.
+5. Streaming tools return generated text token-by-token using Server-Sent Events.
+6. Analysis tools return structured JSON that the frontend renders as readable sections.
+7. Copy the generated output and use it in blog drafts, SEO briefs, campaigns, calendars, or metadata.
+
+## Streaming
+
+Yes, ContentForge uses SSE streaming.
+
+Server-Sent Events are used for tools that generate longer text responses:
+
+- Blog Generator: `/api/blog/generate`
+- Marketing Copy: `/api/marketing/generate`
+- Content Rewriter: `/api/content/rewrite`
+
+The backend streams Groq response chunks as SSE events, and the React `useStream` hook reads those chunks in real time so generated content appears progressively in the UI.
+
+Tools that need structured results, such as SEO analysis, keyword research, content ideas, calendars, brand voice, and metadata, return JSON instead of streaming text.
 
 ## Setup
 
